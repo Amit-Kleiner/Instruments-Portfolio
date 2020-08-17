@@ -1,0 +1,20 @@
+<div class="creation-form">
+    <h2>Create a new instrument</h2>
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" id="name" [(ngModel)]="name" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Symbol</mat-label>
+        <input matInput type="text" id="symbol" [(ngModel)]="symbol" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <input matInput type="text" id="type" [(ngModel)]="instrumentType" required>
+    </mat-form-field>
+
+    <button mat-raised-button class="save-button" (click)="saveInstrument()" 
+            [disabled]="name === '' || symbol === '' || instrumentType == ''">
+        Save
+    </button>
+</div>

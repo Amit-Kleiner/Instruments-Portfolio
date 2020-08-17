@@ -1,0 +1,9 @@
+.creation-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.save-button {
+    width: 50%;
+    align-self: center;
+}

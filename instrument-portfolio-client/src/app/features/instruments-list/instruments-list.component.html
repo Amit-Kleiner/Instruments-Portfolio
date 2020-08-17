@@ -1,0 +1,34 @@
+<div (click)="addNewInstrument()"><mat-icon class="create" >add</mat-icon></div>
+
+<div class="instruments-table">
+  <mat-form-field>
+    <mat-label>Filter By Name</mat-label>
+    <input matInput [formControl]="filter" placeholder="filter by name.." #input>
+  </mat-form-field>
+
+  <table mat-table [dataSource]="filteredInstruments$ | async" class="mat-elevation-z8">
+    <ng-container class="column" matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let instrument"> {{instrument.name}} </td>
+    </ng-container>
+
+    <ng-container class="column" matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef> Symbol </th>
+      <td mat-cell *matCellDef="let instrument"> {{instrument.symbol}} </td>
+    </ng-container>
+
+    <ng-container class="column" matColumnDef="instrumentType">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let instrument"> {{instrument.instrumentType}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Delete </th>   
+      <td mat-cell *matCellDef="let instrument"> 
+        <div class="delete-button" (click)="deleteInstrument(instrument)"><mat-icon class="delete-button">delete</mat-icon></div></td>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </table>
+</div>
