@@ -3,6 +3,5 @@ module.exports = {
     USER: "sql12360883",
     PASSWORD: "UA21lfvuLZ",
     DB: "sql12360883",
-    PORT: "3306",
-    ID_MAX_VALUE: 1000
-  };
+    PORT: "3306"
+};
